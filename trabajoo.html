@@ -1,1 +1,31 @@
-<htmal>
+<html>
+  <head> 
+    <title> NASA </title>  
+  </head>
+  <body> <div> 
+  <h1> Astronomy Picture Of The Day </h1>
+  <div id="content">
+    <p> loading... </p>
+  </div>
+  </div>
+  <script> 
+  const apikey="DEMO_KEY";
+  const apiUrl="'https://api.nasa.gov/planetary/apod?apikey=${apikey}';
+   fetch (apiurl)
+     .then(response=>response.json<))
+     then(data=>{
+       const contentDiv=document.getElementById('content');
+       imgElement.src=data.url;
+       imgElement.alt=data.title;
+       const titleElement=document.createElement('div');
+        titleElement.textcContent=data.title;
+       const explanationElement=document.createElement('div')
+        explanationElement=data.explanation;
+       content.Div.innerHTML='';contentDIV.AppendChild(imgElement)
+       contentDiv.appendChild(titleElement);
+       appendChild(explanationElement); })
+      .catch(error=>{const contentDiv=document.getElementById('content');
+             contentDiv.innerHTML='<p>Error:${error.message}</p>';});
+  </script>
+  </body>
+</html>
